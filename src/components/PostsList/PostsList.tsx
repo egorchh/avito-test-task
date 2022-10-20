@@ -1,10 +1,12 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useEffect } from 'react';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
+import { useActions } from '../../hooks/useAction';
 import type {} from 'redux-thunk/extend-redux'
 
+import PostsItem from '../PostItem/PostsItem';
+import Spinner from '../Spinner/Spinner';
+
 import './postsList.css'
-import { useActions } from '../../hooks/useAction';
-import PostItem from '../PostItem/PostItem';
 
 const PostsList: React.FC = () => {
   const {posts, loading, error} = useTypedSelector(state => state.posts);
@@ -12,13 +14,18 @@ const PostsList: React.FC = () => {
 
   useEffect(() => {
     fetchPosts()
+    // const timerId = setInterval(fetchPosts, 60000);
+
+    // return () => {
+    //   clearInterval(timerId);
+    // };
     // eslint-disable-next-line
-  }, [])
+  }, []);
 
   const renderPostsList = () => {
     const news = posts.map(({id, title, score, by, time}) => {
       return (
-        <PostItem
+        <PostsItem
           key={id}
           title={title}
           score={score}
@@ -28,20 +35,24 @@ const PostsList: React.FC = () => {
       )
     })
 
-    return <ul>{news}</ul>
+    return <ul className='posts-list'>{news}</ul>
   }
 
-  if (loading) {
-    return <h3>Идет загрузка</h3>
-  }
+  // if (loading) {
+  //   return (
+  //     <Spinner size={150} />
+  //   )
+  // }
 
   if (error) {
     return <h3>Произошла ошибка</h3>
   }
 
   return (
-    <div>
-      {renderPostsList()}
+    <div className='posts'>
+      {
+        loading ? <Spinner size={200} /> : renderPostsList()
+      }
     </div>
   );
 };

@@ -1,0 +1,72 @@
+.posts-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 75vw;
+  min-height: 160px;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: var(--primary-color);
+  border: 2px solid var(--pink-color);
+}
+
+.posts-item:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.posts-item__headline-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.posts-item__title {
+  font-family: 'Gilroy-Bold';
+  font-size: 22px;
+  background: var(--red-color);
+  background: -webkit-linear-gradient(to right, var(--red-color) 18%, var(--pink-color) 56%, var(--yellow-color) 100%);
+  background: -moz-linear-gradient(to right, var(--red-color) 18%, var(--pink-color) 56%, var(--yellow-color) 100%);
+  background: linear-gradient(to right, var(--red-color) 18%, var(--pink-color) 56%, var(--yellow-color) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent
+}
+
+.posts-item__score-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  min-width: 70px;
+  margin-top: 5px;
+}
+
+.posts-item__score-value {
+  font-size: 18px;
+  color: var(--yellow-color)
+}
+
+.posts-item__score-img {
+  width: 18px;
+  height: 18px;
+  margin-left: 10px;
+}
+
+.posts-item__descr-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.posts-item__descr-author, .posts-item__descr-date {
+  font-size: 18px;
+  color: var(--pink-color)
+}
+
+.posts-item__descr-date {
+  font-size: 15px;
+  font-family: "Gilroy-Light";
+}
+
+
