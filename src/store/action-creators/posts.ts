@@ -14,8 +14,20 @@ export const fetchPosts = () => {
     } catch (error) {
       dispatch({
         type: PostsActionTypes.FETCH_POSTS_ERROR, 
-        payload: 'Произошла ошибка при получении постов'
+        payload: 'Произошла ошибка при получении новостей'
       })
+    }
+  }
+}
+
+export const fetchOnePost = (id: number) => {
+  return async (dispatch: Dispatch<PostsAction>) => {
+    try {
+      dispatch({type: PostsActionTypes.FETCH_ONE_POST});
+      const post = await getPost(id);
+      dispatch({type: PostsActionTypes.FETCH_ONE_POST_SUCCESS, payload: post})
+    } catch (error) {
+      dispatch({type: PostsActionTypes.FETCH_ONE_POST_ERROR, payload: 'Произошла ошибка при получении этой новости'})
     }
   }
 }

@@ -11,9 +11,7 @@ interface PostItemProps {
   time: number
 }
 
-const PostItem: React.FC<PostItemProps> = ({title, score, by, time}) => {
-  // const likeSVG = require("../../assets/images/like.svg");
-
+const PostItem: React.FC<PostItemProps> = ({title, score, by, time}) => {  
   function covertTimeToDate(time: number): string {
     let date = new Date(time * 1000);
     return date.toLocaleDateString("ru-RU").split('.').join(' ');

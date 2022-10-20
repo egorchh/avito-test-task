@@ -7,6 +7,7 @@ import PostsItem from '../PostItem/PostsItem';
 import Spinner from '../Spinner/Spinner';
 
 import './postsList.css'
+import { Link } from 'react-router-dom';
 
 const PostsList: React.FC = () => {
   const {posts, loading, error} = useTypedSelector(state => state.posts);
@@ -25,24 +26,22 @@ const PostsList: React.FC = () => {
   const renderPostsList = () => {
     const news = posts.map(({id, title, score, by, time}) => {
       return (
-        <PostsItem
-          key={id}
-          title={title}
-          score={score}
-          by={by}
-          time={time}
-        />
+        <Link 
+          key={id} 
+          className='posts-link' to={`/posts/${id}`}
+        >
+          <PostsItem
+            title={title}
+            score={score}
+            by={by}
+            time={time}
+          />
+        </Link>
       )
     })
 
     return <ul className='posts-list'>{news}</ul>
   }
-
-  // if (loading) {
-  //   return (
-  //     <Spinner size={150} />
-  //   )
-  // }
 
   if (error) {
     return <h3>Произошла ошибка</h3>

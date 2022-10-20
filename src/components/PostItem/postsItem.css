@@ -11,10 +11,6 @@
   border: 2px solid var(--pink-color);
 }
 
-.posts-item:not(:last-child) {
-  margin-bottom: 20px;
-}
-
 .posts-item__headline-wrapper {
   display: flex;
   align-items: flex-start;
@@ -30,7 +26,8 @@
   background: -moz-linear-gradient(to right, var(--red-color) 18%, var(--pink-color) 56%, var(--yellow-color) 100%);
   background: linear-gradient(to right, var(--red-color) 18%, var(--pink-color) 56%, var(--yellow-color) 100%);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent
+  -webkit-text-fill-color: transparent;
+  cursor: pointer
 }
 
 .posts-item__score-wrapper {
@@ -57,11 +54,13 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  cursor: pointer;
 }
 
 .posts-item__descr-author, .posts-item__descr-date {
   font-size: 18px;
-  color: var(--pink-color)
+  color: var(--pink-color);
+  cursor: pointer;
 }
 
 .posts-item__descr-date {

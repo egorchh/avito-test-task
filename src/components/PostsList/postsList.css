@@ -2,6 +2,16 @@
   display: flex;
   justify-content: center;
   min-height: 100vh;
+  align-items: flex-start;
+}
+
+.posts-link {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.posts-link:not(:last-child) {
+  margin-bottom: 20px;
 }
 
 .posts-list {
