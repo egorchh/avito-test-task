@@ -1,4 +1,5 @@
 import React from 'react';
+import { covertTimeToDate } from '../../utils/converTime';
 
 import './postsItem.css';
 
@@ -12,10 +13,7 @@ interface PostItemProps {
 }
 
 const PostItem: React.FC<PostItemProps> = ({title, score, by, time}) => {  
-  function covertTimeToDate(time: number): string {
-    let date = new Date(time * 1000);
-    return date.toLocaleDateString("ru-RU").split('.').join(' ');
-  }
+  
 
   return (
     <li className='posts-item'>

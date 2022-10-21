@@ -4,19 +4,21 @@ import { useActions } from '../../hooks/useAction';
 import type {} from 'redux-thunk/extend-redux';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import './postPage.css'
+import { covertTimeToDate } from '../../utils/converTime';
+
+import linkSVG from '../../assets/images/link.svg'
+import CommentsList from '../../components/CommetsList/CommentsList';
+import BackLink from '../../components/BackLink/BackLink';
+import Spinner from '../../components/Spinner/Spinner';
+import SeparatorLine from '../../components/ui/SeparatorLine/SeparatorLine';
 
 
 
 const PostPage: React.FC = () => {
   const {post, loading, error} = useTypedSelector(state => state.posts);
-
-  // console.log(post?.title);
-
   const {fetchOnePost} = useActions();
 
   const { id } = useParams<{id?: string}>()
-
-  console.log(id)
 
   const numericId = Number(id)
 
@@ -24,10 +26,37 @@ const PostPage: React.FC = () => {
     fetchOnePost(numericId);
     // eslint-disable-next-line
   }, [])
+
+  if (loading) {
+    return <Spinner size={150}/>
+  }
   
   return (
-    <div>
-      <p>{post.title}</p>
+    <div className='post-page'>
+      <BackLink />
+      <a 
+        rel="noreferrer" 
+        target="_blank" 
+        href={post.url} 
+        className="post-page__link"
+      >
+        <h1 className='post-page__title'>
+          {post.title}
+        </h1>
+        <img className="post-page__link-img" src={linkSVG} alt="Ссылка на источник новости" />
+      </a>
+      <div 
+        className='post-page__descr-wrapper'
+      >
+        <p className='post-page__descr-author'>
+          {post.by}
+        </p>
+        <p className='post-page__descr-date'>
+          {covertTimeToDate(post.time)}
+        </p>
+      </div>
+      <SeparatorLine />
+      <CommentsList />
     </div>
   );
 };

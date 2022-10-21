@@ -1,9 +1,17 @@
 import React from 'react';
 
-const Page404 = () => {
+import BackLink from '../../components/BackLink/BackLink';
+
+import './page404.css'
+
+const Page404: React.FC = () => {
   return (
-    <div>
-      Ошибка
+    <div className='page404'>
+      <h1 className='page404__title'>404</h1>
+      <p className='page404__description'>
+        Sorry, we couldn't find that page ;(
+      </p>
+      <BackLink />
     </div>
   );
 };

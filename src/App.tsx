@@ -10,8 +10,8 @@ import PostPage from './pages/PostPage/PostPage';
 function App() {
   return (
     <Router>
-        <div className="App">
-        {/* <AppHeader /> */}
+      <div className="app">
+      {/* <AppHeader /> */}
         <main>
           <Suspense fallback={<Spinner size={150} />}>
             <Switch>

@@ -1,0 +1,12 @@
+.separatorLine {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.separatorLine__line {
+  width: 100%;
+  height: 1.3px;
+  border: 0;
+  background-image: linear-gradient(to right, var(--pink-color), var(--red-color), var(--yellow-color));
+}

@@ -1,0 +1,57 @@
+.post-page {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 75vw;
+  min-height: 100vh;
+  padding: 40px 20px 60px 20px;
+}
+
+.post-page__title, .post-page__link {
+  background: var(--red-color);
+  background: -webkit-linear-gradient(to right, var(--red-color) 18%, var(--pink-color) 56%, var(--yellow-color) 100%);
+  background: -moz-linear-gradient(to right, var(--red-color) 18%, var(--pink-color) 56%, var(--yellow-color) 100%);
+  background: linear-gradient(to right, var(--red-color) 18%, var(--pink-color) 56%, var(--yellow-color) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 20px;
+}
+
+.post-page__title {
+  font-family: 'Gilroy-Bold';
+  font-size: 35px;
+}
+
+.post-page__link {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.post-page__link-img {
+  width: 35px;
+  height: 35px;
+  margin-top: 5px;
+  margin-left: 10px;
+} 
+
+.post-page__descr-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.post-page__descr-author,
+.post-page__descr-date {
+  font-size: 18px;
+  color: var(--pink-color);
+}
+
+.post-page__descr-date {
+  font-size: 15px;
+  font-family: "Gilroy-Light";
+}
