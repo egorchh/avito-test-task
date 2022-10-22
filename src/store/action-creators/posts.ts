@@ -1,5 +1,5 @@
 import { Dispatch } from "redux"
-import { getPost, getPostIds } from "../../services/hackerNewsAPI";
+import { getPost, getPostIds } from "../../services/postsAPI";
 import { PostsAction, PostsActionTypes } from "../../types/posts"
 
 export const fetchPosts = () => {
@@ -27,7 +27,7 @@ export const fetchOnePost = (id: number) => {
       const post = await getPost(id);
       dispatch({type: PostsActionTypes.FETCH_ONE_POST_SUCCESS, payload: post})
     } catch (error) {
-      dispatch({type: PostsActionTypes.FETCH_ONE_POST_ERROR, payload: 'Произошла ошибка при получении этой новости'})
+      dispatch({type: PostsActionTypes.FETCH_ONE_POST_ERROR, payload: 'Произошла ошибка при получении данной новости'})
     }
   }
 }

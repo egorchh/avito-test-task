@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { useActions } from '../../hooks/useAction';
+import { Link } from 'react-router-dom';
 import type {} from 'redux-thunk/extend-redux'
 
 import PostsItem from '../PostItem/PostsItem';
 import Spinner from '../Spinner/Spinner';
+import ErrorMessage from '../ErrorMessage/ErrorMessage';
 
 import './postsList.css'
-import { Link } from 'react-router-dom';
-import ErrorMessage from '../ErrorMessage/ErrorMessage';
 
 const PostsList: React.FC = () => {
   const {posts, loading, error} = useTypedSelector(state => state.posts);
@@ -41,7 +41,12 @@ const PostsList: React.FC = () => {
       )
     })
 
-    return <ul className='posts-list'>{news}</ul>
+    return (
+      
+        <ul className='posts-list'>
+            {news}
+        </ul>
+    );
   }
 
   if (error) {

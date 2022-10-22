@@ -31,7 +31,6 @@ const PostPage: React.FC = () => {
 
   return (
     <div className='post-page'>
-      
       <Helmet>
         <meta name="description" content="News title" />
         <title>{post.title}</title>
@@ -58,8 +57,7 @@ const PostPage: React.FC = () => {
           {covertTimeToDate(post.time)}
         </p>
       </div>
-      <SeparatorLine />
-      <CommentsList />
+      <CommentsList commentsIds={post.kids} />
     </div>
   );
 };

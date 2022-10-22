@@ -5,6 +5,7 @@
   width: 75vw;
   min-height: 100vh;
   padding: 40px 20px 60px 20px;
+  animation: fade-in 500ms forwards;
 }
 
 .post-page__title, .post-page__link {
@@ -54,4 +55,16 @@
 .post-page__descr-date {
   font-size: 15px;
   font-family: "Gilroy-Light";
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }

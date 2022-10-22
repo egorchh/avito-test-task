@@ -9,6 +9,7 @@
   border-radius: 15px;
   background-color: var(--primary-color);
   border: 2px solid var(--pink-color);
+  animation: fade-in 500ms forwards;
 }
 
 .posts-item__headline-wrapper {
@@ -68,4 +69,13 @@
   font-family: "Gilroy-Light";
 }
 
-
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

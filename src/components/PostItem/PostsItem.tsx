@@ -1,20 +1,19 @@
 import React from 'react';
+
 import { covertTimeToDate } from '../../utils/converTime';
 
 import './postsItem.css';
 
 import likeSVG from '../../assets/images/like.svg'
 
-interface PostItemProps {
+interface PostsItemProps {
   title: string;
   score: number;
   by: string;
   time: number
 }
 
-const PostItem: React.FC<PostItemProps> = ({title, score, by, time}) => {  
-  
-
+const PostItem: React.FC<PostsItemProps> = ({title, score, by, time}) => {
   return (
     <li className='posts-item'>
       <div className="posts-item__headline-wrapper">
