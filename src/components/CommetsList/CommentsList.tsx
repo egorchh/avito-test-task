@@ -9,6 +9,8 @@ import CommentsItem from '../CommentsItem/CommentsItem';
 import Spinner from '../Spinner/Spinner';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 
+import refreshSVG from '../../assets/images/refresh.svg'
+
 import './commentsList.css'
 
 
@@ -46,6 +48,10 @@ const CommentsList:React.FC<CommentsListProps> = ({commentsIds, descendants}) =>
     );
   }
 
+  const refreshHandler = () => {
+    fetchComments(commentsIds);
+  }
+
   if (descendants === 0) {
     return (
       <div className="comments">
@@ -62,6 +68,29 @@ const CommentsList:React.FC<CommentsListProps> = ({commentsIds, descendants}) =>
 
   return (
     <div className='comments'>
+      <div className="comments-toolkit">
+        <div className="comments-toolkit__counter">
+          <p className="comments-toolkit__counter-text">
+          Total
+        </p>
+        <div className='comments-toolkit__counter-value'>
+          {descendants}
+        </div>
+        <p className="comments-toolkit__counter-text">
+          comments
+        </p>
+        </div>
+        <button 
+          className="comments-toolkit__refresh"
+          onClick={refreshHandler}
+        >
+          <img 
+            className="comments-toolkit__refresh-img" 
+            src={refreshSVG} 
+            alt={"Кнопка обновления списка комментариев"}
+          />
+        </button>
+      </div>
       {loading ? <Spinner size={100} /> : renderCommentsList()}
     </div>
   );

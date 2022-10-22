@@ -1,5 +1,62 @@
 .comments {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
   color: var(--pink-color);
+}
+
+.comments-toolkit {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 70.5vw;
+  margin-bottom: 20px;
+  animation: fade-in 1s forwards;
+}
+
+.comments-toolkit__counter {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  border: 2px solid var(--pink-color);
+}
+
+.comments-toolkit__counter-value {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.comments-toolkit__counter-text:not(:first-child) {
+  margin-left: 10px;
+}
+
+.comments-toolkit__refresh {
+  background: none;
+  border: none;
+  width: 35px;
+  height: 35px;
+}
+
+.comments-toolkit__refresh:hover {
+  transform: rotate(360deg);
+  transition: 1s all;
+}
+
+.comments-toolkit__refresh-img {
+  width: 35px;
+  height: 35px;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }

@@ -1,21 +1,13 @@
 import React from 'react'
-import './skeleton.scss';
+import './skeleton.css';
 
 const Skeleton: React.FC = () => {
-    return (
-        <>
-            <p className="char__select">Please select a character to see information</p>
-            <div className="skeleton">
-                <div className="pulse skeleton__header">
-                    <div className="pulse skeleton__circle"></div>
-                    <div className="pulse skeleton__mini"></div>
-                </div>
-                <div className="pulse skeleton__block"></div>
-                <div className="pulse skeleton__block"></div>
-                <div className="pulse skeleton__block"></div>
-            </div>
-        </>
-    )
+  return (
+    <>
+      <div className="skeleton"></div>
+      <div className="skeleton-descr"></div>
+    </>
+  )
 }
 
 export default Skeleton;

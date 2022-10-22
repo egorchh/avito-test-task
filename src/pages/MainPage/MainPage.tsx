@@ -27,7 +27,7 @@ const MainPage = () => {
           onClick={refreshHandler} 
           className='headline-button'
         >
-          <img className='headline-button__img' src={refreshSVG} alt="" />
+          <img className='headline-button__img' src={refreshSVG} alt="Кнопка обновления списка новостей" />
         </button>
       </div>
       <PostsList />
