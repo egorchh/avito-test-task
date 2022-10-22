@@ -1,35 +1,68 @@
-import React from 'react';
-
-import './commentsList.css'
+import React, { useState } from 'react';
 
 import { useEffect } from 'react';
 import { useActions } from '../../hooks/useAction';
 import type {} from 'redux-thunk/extend-redux';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 
+import CommentsItem from '../CommentsItem/CommentsItem';
+import Spinner from '../Spinner/Spinner';
+import ErrorMessage from '../ErrorMessage/ErrorMessage';
+
+import './commentsList.css'
+
+
 interface CommentsListProps {
-  commentsIds: number[]
+  commentsIds: number[];
+  descendants: number;
 }
 
-const CommentsList:React.FC<CommentsListProps> = ({commentsIds}) => {
+const CommentsList:React.FC<CommentsListProps> = ({commentsIds, descendants}) => {
   const {comments, loading, error} = useTypedSelector(state => state.comments);
   const { fetchComments } = useActions();
 
-  // console.log(commentsIds)
+  useEffect(() => {
+    fetchComments(commentsIds)
+    
+    // eslint-disable-next-line
+  }, [commentsIds])
 
-  // useEffect(() => {
-  //   fetchComments(commentsIds)
-  //   // eslint-disable-next-line
-  // }, [])
+  const renderCommentsList = () => {
+    const items = comments.map(({id, text, by, time}) => {
+      return (
+        <CommentsItem
+          key={id}
+          text={text}
+          by={by}
+          time={time}
+        />
+      )
+    })
 
-  // console.log(comments)
+    return (
+        <ul className='comments-list'>
+          {items}
+        </ul>
+    );
+  }
 
+  if (descendants === 0) {
+    return (
+      <div className="comments">
+        <p className='comments-absence'>
+          There are no comments for this news yet.
+        </p>
+      </div>
+    );
+  }
+
+  if (error) {
+    return <ErrorMessage />
+  }
 
   return (
-    <div>
-      {/* {comments.map(comment => {
-        return comment.text
-      })} */}
+    <div className='comments'>
+      {loading ? <Spinner size={100} /> : renderCommentsList()}
     </div>
   );
 };

@@ -13,7 +13,7 @@ export const fetchComments = (commentsIds: number[]) => {
     } catch (error) {
       dispatch({
         type: CommentsActionTypes.FETCH_COMMENTS_ERROR, 
-        payload: 'Произошла ошибка при получении новостей'
+        payload: 'Произошла ошибка при получении комментариев'
       })
     }
   }

@@ -1,0 +1,58 @@
+.comments-item {
+  display: flex;
+  flex-direction: column;
+  width: 70.3vw;
+  min-height: 10em;
+  border: 2px solid;
+  border-top: none;
+  border-image: var(--red-color);
+  border-image: -webkit-linear-gradient(to right, var(--red-color) 18%, var(--pink-color) 56%, var(--yellow-color) 100%);
+  border-image: -moz-linear-gradient(to right, var(--red-color) 18%, var(--pink-color) 56%, var(--yellow-color) 100%);
+  border-image: linear-gradient(to right, var(--red-color) 18%, var(--pink-color) 56%, var(--yellow-color) 100%);
+  border-image-slice: 1;
+}
+
+.comments-item:not(:last-child) {
+  margin-bottom: 25px;
+}
+
+.comments-item__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: var(--red-color);
+  background: -webkit-linear-gradient(to right, var(--red-color) 18%, var(--pink-color) 56%, var(--yellow-color) 100%);
+  background: -moz-linear-gradient(to right, var(--red-color) 18%, var(--pink-color) 56%, var(--yellow-color) 100%);
+  background: linear-gradient(to right, var(--red-color) 18%, var(--pink-color) 56%, var(--yellow-color) 100%);
+}
+
+.comments-item__user-info {
+  display: flex;
+  align-items: center;
+}
+
+.comments-item__user-avatar {
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+}
+
+.comments-item__user-nikname {
+  font-family: 'Gilroy-SemiBold';
+  font-size: 16px;
+  color: var(--primary-color)
+}
+
+.comments-item__date {
+  font-family: 'Gilroy-SemiBold';
+  font-size: 14px;
+  color: var(--primary-color)
+}
+
+.comments-item__text {
+  font-family: 'Gilroy-SemiBold';
+  font-size: 18px;
+  padding: 10px 10px 20px 10px;
+  overflow-wrap: break-word;
+}

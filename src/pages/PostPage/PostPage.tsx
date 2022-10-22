@@ -57,7 +57,7 @@ const PostPage: React.FC = () => {
           {covertTimeToDate(post.time)}
         </p>
       </div>
-      <CommentsList commentsIds={post.kids} />
+      <CommentsList commentsIds={post.kids} descendants={post.descendants} />
     </div>
   );
 };
