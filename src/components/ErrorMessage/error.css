@@ -1,0 +1,26 @@
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 75vw;
+  padding-top: 8em;
+}
+
+.error__message, .error__advice {
+  text-align: center;
+  background: var(--red-color);
+  background: -webkit-linear-gradient(to right, var(--red-color) 18%, var(--pink-color) 56%, var(--yellow-color) 100%);
+  background: -moz-linear-gradient(to right, var(--red-color) 18%, var(--pink-color) 56%, var(--yellow-color) 100%);
+  background: linear-gradient(to right, var(--red-color) 18%, var(--pink-color) 56%, var(--yellow-color) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.error__message {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.error__advice {
+  font-size: 18px
+}

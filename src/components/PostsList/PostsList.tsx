@@ -8,6 +8,7 @@ import Spinner from '../Spinner/Spinner';
 
 import './postsList.css'
 import { Link } from 'react-router-dom';
+import ErrorMessage from '../ErrorMessage/ErrorMessage';
 
 const PostsList: React.FC = () => {
   const {posts, loading, error} = useTypedSelector(state => state.posts);
@@ -44,7 +45,7 @@ const PostsList: React.FC = () => {
   }
 
   if (error) {
-    return <h3>Произошла ошибка</h3>
+    return <ErrorMessage />
   }
 
   return (

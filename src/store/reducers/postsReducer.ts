@@ -16,7 +16,7 @@ const postsReducer = (state = initialState, action: PostsAction): PostsState => 
     case PostsActionTypes.FETCH_POSTS_ERROR:
       return {...state, loading: false, error: action.payload, posts: []}
     case PostsActionTypes.FETCH_ONE_POST:
-      return {...state, loading: false, error: null}
+      return {...state, loading: true, error: null}
     case PostsActionTypes.FETCH_ONE_POST_SUCCESS:
       return {...state, loading: false, error: null, post: action.payload}
     case PostsActionTypes.FETCH_ONE_POST_ERROR:

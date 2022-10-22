@@ -1,9 +1,10 @@
 import PostsList from '../../components/PostsList/PostsList';
+import { useActions } from '../../hooks/useAction';
+import { Helmet } from "react-helmet";
 
 import './mainPage.css'
 
 import refreshSVG from '../../assets/images/refresh.svg'
-import { useActions } from '../../hooks/useAction';
 
 const MainPage = () => {
   const {fetchPosts} = useActions();
@@ -14,6 +15,10 @@ const MainPage = () => {
   
   return (
     <div className='main-page'>
+      <Helmet>
+        <meta name="description" content="Hacker News" />
+        <title>Hacker News</title>
+      </Helmet>
       <div className="headline">
         <h1 className='headline-title'>
           Hacker News:
