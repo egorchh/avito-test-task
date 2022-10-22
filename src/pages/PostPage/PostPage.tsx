@@ -12,6 +12,8 @@ import BackLink from '../../components/BackLink/BackLink';
 import Spinner from '../../components/Spinner/Spinner';
 import SeparatorLine from '../../components/ui/SeparatorLine/SeparatorLine';
 
+import { Helmet } from "react-helmet";
+
 
 
 const PostPage: React.FC = () => {
@@ -27,12 +29,13 @@ const PostPage: React.FC = () => {
     // eslint-disable-next-line
   }, [])
 
-  if (loading) {
-    return <Spinner size={150}/>
-  }
-  
   return (
     <div className='post-page'>
+      
+      <Helmet>
+        <meta name="description" content="News title" />
+        <title>{post.title}</title>
+      </Helmet>
       <BackLink />
       <a 
         rel="noreferrer" 
