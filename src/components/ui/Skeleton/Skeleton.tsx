@@ -5,7 +5,6 @@ const Skeleton: React.FC = () => {
   return (
     <>
       <div className="skeleton"></div>
-      <div className="skeleton-descr"></div>
     </>
   )
 }

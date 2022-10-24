@@ -1,10 +1,11 @@
 .comments-item {
   display: flex;
   flex-direction: column;
-  width: 70.3vw;
+  width: 100%;
   min-height: 10em;
   border: 2px solid;
   border-top: none;
+  /* border-bottom: none; */
   border-image: var(--red-color);
   border-image: -webkit-linear-gradient(to right, var(--red-color) 18%, var(--pink-color) 56%, var(--yellow-color) 100%);
   border-image: -moz-linear-gradient(to right, var(--red-color) 18%, var(--pink-color) 56%, var(--yellow-color) 100%);
@@ -13,8 +14,8 @@
   animation: fade-in 1s forwards;
 }
 
-.comments-item:not(:last-child) {
-  margin-bottom: 25px;
+.comments-item:first-child {
+  margin-top: 0 !important; 
 }
 
 .comments-item__wrapper {

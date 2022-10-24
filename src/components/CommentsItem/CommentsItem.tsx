@@ -13,6 +13,7 @@ interface CommentsItemProps {
   by: string;
   time: number;
   kids: number[] | undefined;
+  commentWidth: number;
 }
 
 interface INestedComments {
@@ -20,9 +21,10 @@ interface INestedComments {
   by: string,
   id: number
   kids: number[]
+  time: number;
 }
 
-const CommentsItem: React.FC<CommentsItemProps> = ({text, by, time, kids}) => {
+const CommentsItem: React.FC<CommentsItemProps> = ({text, by, time, kids, commentWidth}) => {
   const [nestedComments, setNestedComments] = useState<INestedComments[]>([])
   const [showNestedComments, setShowNestedComments] = useState<boolean>(false)
 
@@ -39,20 +41,36 @@ const CommentsItem: React.FC<CommentsItemProps> = ({text, by, time, kids}) => {
   }
 
   const renderNestedComments = (comments: INestedComments[]) => {
-    const result = comments.map(comment => {
+    const items = comments.map(({id, text, by, time, kids}) => {
       return (
-        <p>{comment.id}</p>
+        <CommentsItem
+          commentWidth={commentWidth - 3}
+          key={id}
+          kids={kids}
+          text={text}
+          by={by}
+          time={time}
+        />
       )
     })
 
-    return result;
-  }
+    return (
+        <ul className='comments-list'>
+          {items}
+        </ul>
+    );
+  };
 
   const nestedContent = showNestedComments ? renderNestedComments(nestedComments) : null
 
   return (
     <>
-      <div className='comments-item'>
+      <div 
+        className='comments-item'
+        style={ {
+          width: `calc(${commentWidth}vw - 40px)`,
+        }}
+      >
         <div className="comments-item__wrapper">
           <div className="comments-item__user-info">
             <img className="comments-item__user-avatar" src={avatar} alt="Аватар пользователя" />

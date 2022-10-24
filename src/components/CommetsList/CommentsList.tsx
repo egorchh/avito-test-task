@@ -6,7 +6,6 @@ import type {} from 'redux-thunk/extend-redux';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 
 import CommentsItem from '../CommentsItem/CommentsItem';
-import Spinner from '../ui/Spinner/Spinner';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 
 import refreshSVG from '../../assets/images/refresh.svg'
@@ -33,6 +32,8 @@ const CommentsList:React.FC<CommentsListProps> = ({commentsIds, descendants}) =>
 
   const renderCommentsList = () => {
     const items = comments.map(({id, text, by, time, kids}) => {
+      const commentWidth = 75;
+
       return (
         <CommentsItem
           key={id}
@@ -40,7 +41,8 @@ const CommentsList:React.FC<CommentsListProps> = ({commentsIds, descendants}) =>
           text={text}
           by={by}
           time={time}
-          />
+          commentWidth={commentWidth}
+        />
       )
     })
 
@@ -90,7 +92,12 @@ const CommentsList:React.FC<CommentsListProps> = ({commentsIds, descendants}) =>
           />
         </button>
       </div>
-      {loading ? <Skeleton /> : renderCommentsList()}
+      {loading ? 
+        <>
+          <Skeleton />
+        </>
+        : renderCommentsList()
+      }
       {error ?  <ErrorMessage /> : null}
     </div>
   );
