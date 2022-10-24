@@ -5,7 +5,6 @@
   min-height: 10em;
   border: 2px solid;
   border-top: none;
-  /* border-bottom: none; */
   border-image: var(--red-color);
   border-image: -webkit-linear-gradient(to right, var(--red-color) 18%, var(--pink-color) 56%, var(--yellow-color) 100%);
   border-image: -moz-linear-gradient(to right, var(--red-color) 18%, var(--pink-color) 56%, var(--yellow-color) 100%);

@@ -1,0 +1,16 @@
+.refresh-button {
+  background: none;
+  border: none;
+  width: 35px;
+  height: 35px;
+}
+
+.refresh-button:hover {
+  transform: rotate(360deg);
+  transition: 1s all;
+}
+
+.refresh-button__img {
+  width: 35px;
+  height: 35px;
+}

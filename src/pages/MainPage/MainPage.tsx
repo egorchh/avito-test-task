@@ -1,10 +1,9 @@
 import PostsList from '../../components/PostsList/PostsList';
 import { useActions } from '../../hooks/useAction';
 import { Helmet } from "react-helmet";
+import RefreshButton from '../../components/ui/RefreshButton/RefreshButton';
 
 import './mainPage.css'
-
-import refreshSVG from '../../assets/images/refresh.svg'
 
 const MainPage = () => {
   const {fetchPosts} = useActions();
@@ -23,12 +22,7 @@ const MainPage = () => {
         <h1 className='headline-title'>
           Hacker News:
         </h1>
-        <button 
-          onClick={refreshHandler} 
-          className='headline-button'
-        >
-          <img className='headline-button__img' src={refreshSVG} alt="Кнопка обновления списка новостей" />
-        </button>
+        <RefreshButton refreshHandler={refreshHandler} />
       </div>
       <PostsList />
     </div>

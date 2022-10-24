@@ -8,11 +8,9 @@ import { useTypedSelector } from '../../hooks/useTypedSelector';
 import CommentsItem from '../CommentsItem/CommentsItem';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 
-import refreshSVG from '../../assets/images/refresh.svg'
-
 import './commentsList.css'
 import Skeleton from '../ui/Skeleton/Skeleton';
-
+import RefreshButton from '../ui/RefreshButton/RefreshButton';
 
 interface CommentsListProps {
   commentsIds: number[];
@@ -81,16 +79,7 @@ const CommentsList:React.FC<CommentsListProps> = ({commentsIds, descendants}) =>
           comments
         </p>
         </div>
-        <button 
-          className="comments-toolkit__refresh"
-          onClick={refreshHandler}
-        >
-          <img 
-            className="comments-toolkit__refresh-img" 
-            src={refreshSVG} 
-            alt={"Кнопка обновления списка комментариев"}
-          />
-        </button>
+        <RefreshButton refreshHandler={refreshHandler} />
       </div>
       {loading ? 
         <>

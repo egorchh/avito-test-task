@@ -16,6 +16,9 @@ const PostsList: React.FC = () => {
 
   useEffect(() => {
     fetchPosts()
+
+    // автоматическое обновление постов
+
     // const timerId = setInterval(fetchPosts, 60000);
 
     // return () => {
@@ -56,7 +59,7 @@ const PostsList: React.FC = () => {
   return (
     <div className='posts'>
       {
-        loading ? <Spinner size={200} /> : renderPostsList()
+        loading ? <Spinner size={150} /> : renderPostsList()
       }
     </div>
   );

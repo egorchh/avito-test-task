@@ -1,18 +1,20 @@
 import { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import './App.css';
+import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
 
 import Spinner from './components/ui/Spinner/Spinner';
-import MainPage from './pages/MainPage/MainPage';
-import Page404 from "./pages/Page404/Page404";
-import PostPage from './pages/PostPage/PostPage';
+
+import './App.css';
+
+const MainPage = lazy(() => import("./pages/MainPage/MainPage"));
+const Page404 = lazy(() => import("./pages/Page404/Page404")) ;
+const PostPage = lazy(() => import("./pages/PostPage/PostPage"));
 
 function App() {
   return (
     <Router>
       <div className="app">
-      {/* <AppHeader /> */}
-        <main>
+        <ErrorBoundary>
           <Suspense fallback={<Spinner size={150} />}>
             <Switch>
               <Route exact path="/">
@@ -26,7 +28,7 @@ function App() {
               </Route>
             </Switch>
           </Suspense>
-        </main>
+        </ErrorBoundary>
       </div>
     </Router>
   );

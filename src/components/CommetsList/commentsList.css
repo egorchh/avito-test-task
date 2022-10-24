@@ -54,24 +54,6 @@
   margin-left: 10px;
 }
 
-.comments-toolkit__refresh {
-  background: none;
-  border: none;
-  width: 35px;
-  height: 35px;
-}
-
-.comments-toolkit__refresh:hover {
-  transform: rotate(360deg);
-  transition: 1s all;
-}
-
-.comments-toolkit__refresh-img {
-  width: 35px;
-  height: 35px;
-  margin-left: 4px;
-}
-
 @keyframes fade-in {
   0% {
     opacity: 0;
