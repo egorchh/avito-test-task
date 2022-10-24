@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { useEffect } from 'react';
 import { useActions } from '../../hooks/useAction';
@@ -6,12 +6,13 @@ import type {} from 'redux-thunk/extend-redux';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 
 import CommentsItem from '../CommentsItem/CommentsItem';
-import Spinner from '../Spinner/Spinner';
+import Spinner from '../ui/Spinner/Spinner';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 
 import refreshSVG from '../../assets/images/refresh.svg'
 
 import './commentsList.css'
+import Skeleton from '../ui/Skeleton/Skeleton';
 
 
 interface CommentsListProps {
@@ -22,6 +23,7 @@ interface CommentsListProps {
 const CommentsList:React.FC<CommentsListProps> = ({commentsIds, descendants}) => {
   const {comments, loading, error} = useTypedSelector(state => state.comments);
   const { fetchComments } = useActions();
+  
 
   useEffect(() => {
     fetchComments(commentsIds)
@@ -30,14 +32,15 @@ const CommentsList:React.FC<CommentsListProps> = ({commentsIds, descendants}) =>
   }, [commentsIds])
 
   const renderCommentsList = () => {
-    const items = comments.map(({id, text, by, time}) => {
+    const items = comments.map(({id, text, by, time, kids}) => {
       return (
         <CommentsItem
           key={id}
+          kids={kids}
           text={text}
           by={by}
           time={time}
-        />
+          />
       )
     })
 
@@ -46,7 +49,7 @@ const CommentsList:React.FC<CommentsListProps> = ({commentsIds, descendants}) =>
           {items}
         </ul>
     );
-  }
+  };
 
   const refreshHandler = () => {
     fetchComments(commentsIds);
@@ -60,10 +63,6 @@ const CommentsList:React.FC<CommentsListProps> = ({commentsIds, descendants}) =>
         </p>
       </div>
     );
-  }
-
-  if (error) {
-    return <ErrorMessage />
   }
 
   return (
@@ -91,7 +90,8 @@ const CommentsList:React.FC<CommentsListProps> = ({commentsIds, descendants}) =>
           />
         </button>
       </div>
-      {loading ? <Spinner size={100} /> : renderCommentsList()}
+      {loading ? <Skeleton /> : renderCommentsList()}
+      {error ?  <ErrorMessage /> : null}
     </div>
   );
 };

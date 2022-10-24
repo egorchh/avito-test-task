@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import './backLink.css';
 
-import back from '../../assets/images/back.svg';
+import back from '../../../assets/images/back.svg';
 
 const BackLink: React.FC = () => {
   return (

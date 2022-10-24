@@ -1,6 +1,6 @@
 import React from 'react';
 
-import BackLink from '../../components/BackLink/BackLink';
+import BackLink from '../../components/ui/BackLink/BackLink';
 
 import './page404.css'
 

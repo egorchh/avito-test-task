@@ -8,11 +8,11 @@ import { covertTimeToDate } from '../../utils/converTime';
 
 import linkSVG from '../../assets/images/link.svg'
 import CommentsList from '../../components/CommetsList/CommentsList';
-import BackLink from '../../components/BackLink/BackLink';
+import BackLink from '../../components/ui/BackLink/BackLink';
 
 import { Helmet } from "react-helmet";
 import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
-import Skeleton from '../../components/Skeleton/Skeleton';
+import Skeleton from '../../components/ui/Skeleton/Skeleton';
 
 
 

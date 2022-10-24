@@ -24,4 +24,5 @@ export interface FetchCommentsErrorAction {
   payload: string;
 }
 
+
 export type CommentsAction = FetchCommentsAction | FetchCommentsSuccessAction | FetchCommentsErrorAction

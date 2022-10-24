@@ -1,0 +1,22 @@
+.expand-button,
+.expand-button__img {
+  width: 2em;
+  height: 2em;
+}
+
+.expand-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background: none;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  transition: .3s all;
+  perspective: 100px;
+}
+
+.show {
+  transform: rotateX(180deg);
+}

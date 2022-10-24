@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import type {} from 'redux-thunk/extend-redux'
 
 import PostsItem from '../PostItem/PostsItem';
-import Spinner from '../Spinner/Spinner';
+import Spinner from '../ui/Spinner/Spinner';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 
 import './postsList.css'

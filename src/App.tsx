@@ -2,7 +2,7 @@ import { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
 
-import Spinner from './components/Spinner/Spinner';
+import Spinner from './components/ui/Spinner/Spinner';
 import MainPage from './pages/MainPage/MainPage';
 import Page404 from "./pages/Page404/Page404";
 import PostPage from './pages/PostPage/PostPage';
