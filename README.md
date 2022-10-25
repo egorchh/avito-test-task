@@ -4,8 +4,8 @@
 
 ## Технологии:
 - HTML/CSS
-- React
-- Redux
+- React (Hooks, React Router v5)
+- Redux (Redux-Thunk)
 - TypeScript
 
 ## Чтобы запустить проект:
@@ -18,7 +18,11 @@
   - Далее вам необходимой зайти в директорию проекта <code>client</code>, пропишите в терминале <code>cd client</code>
   - Запустите проект на локальном хостинге: пропишите в терминале <code>yarn start</code>
 
-## Спасибо за потраченное на проверку время!
-
-![Иллюстрация к проекту](https://storage.theoryandpractice.ru/tnp/uploads/image_unit/000/156/586/image/base_87716f252d.jpg)
+## Спасибо за уделенное время =)
+- Главная страница со списком новостей
+![Иллюстрация к проекту](https://github.com/egorchh/avito-test-task/raw/master/src/assets/screens/1.png)
+- Страница комментариев
+![Иллюстрация к проекту](https://github.com/egorchh/avito-test-task/raw/master/src/assets/screens/2.png)
+- Пример вложенности комментариев
+![Иллюстрация к проекту](https://github.com/egorchh/avito-test-task/raw/master/src/assets/screens/3.png)
 
