@@ -1,6 +1,6 @@
 # Тестовое задание от компании Avito
 
-## В ходе выполнения задания был разработан нтерфейс для сайта <a href="https://news.ycombinator.com/news">Hacker News</a>, состоящий из двух страниц.
+### В ходе выполнения задания был разработан интерфейс для сайта <a target="_blank" href="https://news.ycombinator.com/news">Hacker News</a>, состоящий из двух страниц.
 
 ## Технологии:
 - React
