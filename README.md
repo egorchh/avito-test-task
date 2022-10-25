@@ -19,8 +19,10 @@
   - Запустите проект на локальном хостинге: пропишите в терминале <code>yarn start</code>
 
 ## Спасибо за потраченное на проверку время!
-
-![Иллюстрация к проекту](https://github.com/egorchh/avito-test-task/raw/master/src/assets/screens/1.png)\
-![Иллюстрация к проекту](https://github.com/egorchh/avito-test-task/raw/master/src/assets/screens/2.png)\
-![Иллюстрация к проекту](https://github.com/egorchh/avito-test-task/raw/master/src/assets/screens/3.png)\
+- Главная страница со списком новостей
+![Иллюстрация к проекту](https://github.com/egorchh/avito-test-task/raw/master/src/assets/screens/1.png)
+- Страница комментариев
+![Иллюстрация к проекту](https://github.com/egorchh/avito-test-task/raw/master/src/assets/screens/2.png)
+- Пример вложенности комментариев
+![Иллюстрация к проекту](https://github.com/egorchh/avito-test-task/raw/master/src/assets/screens/3.png)
 
