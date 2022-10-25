@@ -20,5 +20,5 @@
 
 ## Спасибо за потраченное на проверку время!
 
-![Иллюстрация к проекту](https://storage.theoryandpractice.ru/tnp/uploads/image_unit/000/156/586/image/base_87716f252d.jpg)
+![Иллюстрация к проекту](https://github.com/egorchh/avito-test-task/raw/master/src/assets/screens/1.png)
 
