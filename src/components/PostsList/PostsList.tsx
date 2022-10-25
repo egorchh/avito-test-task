@@ -19,11 +19,12 @@ const PostsList: React.FC = () => {
 
     // автоматическое обновление постов
 
-    // const timerId = setInterval(fetchPosts, 60000);
+    const timerId = setInterval(fetchPosts, 60000);
 
-    // return () => {
-    //   clearInterval(timerId);
-    // };
+    return () => {
+      clearInterval(timerId);
+    };
+    
     // eslint-disable-next-line
   }, []);
 
