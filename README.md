@@ -4,8 +4,8 @@
 
 ## Технологии:
 - HTML/CSS
-- React
-- Redux
+- React (Hooks, React Router v5)
+- Redux (Redux-Thunk)
 - TypeScript
 
 ## Чтобы запустить проект:
