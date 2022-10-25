@@ -13,12 +13,13 @@ import BackLink from '../../components/ui/BackLink/BackLink';
 import { Helmet } from "react-helmet";
 import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
 import Skeleton from '../../components/ui/Skeleton/Skeleton';
+import CommentsTools from '../../components/ui/CommentsTools/CommentsTools';
 
 
 
 const PostPage: React.FC = () => {
   const {post, loading, error} = useTypedSelector(state => state.posts);
-  const {fetchOnePost} = useActions();
+  const { fetchOnePost, fetchComments } = useActions();
 
   const { id } = useParams<{id?: string}>()
 
@@ -28,6 +29,11 @@ const PostPage: React.FC = () => {
     fetchOnePost(numericId);
     // eslint-disable-next-line
   }, [])
+
+  
+  const refreshHandler = () => {
+    fetchComments(post.kids);
+  }
 
   if (error) {
     return <ErrorMessage />
@@ -63,9 +69,10 @@ const PostPage: React.FC = () => {
               {covertTimeToDate(post.time)}
             </p>
           </div>
+          <CommentsTools refreshHandler={refreshHandler} descendants={post.descendants} />
         </>
       }
-      <CommentsList commentsIds={post.kids} descendants={post.descendants} />
+      <CommentsList commentsIds={post.kids} />
     </div>
   );
 };

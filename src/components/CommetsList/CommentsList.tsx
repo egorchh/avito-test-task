@@ -7,17 +7,16 @@ import { useTypedSelector } from '../../hooks/useTypedSelector';
 
 import CommentsItem from '../CommentsItem/CommentsItem';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
+import Skeleton from '../ui/Skeleton/Skeleton';
 
 import './commentsList.css'
-import Skeleton from '../ui/Skeleton/Skeleton';
-import RefreshButton from '../ui/RefreshButton/RefreshButton';
+
 
 interface CommentsListProps {
   commentsIds: number[];
-  descendants: number;
 }
 
-const CommentsList:React.FC<CommentsListProps> = ({commentsIds, descendants}) => {
+const CommentsList:React.FC<CommentsListProps> = ({commentsIds}) => {
   const {comments, loading, error} = useTypedSelector(state => state.comments);
   const { fetchComments } = useActions();
   
@@ -51,11 +50,7 @@ const CommentsList:React.FC<CommentsListProps> = ({commentsIds, descendants}) =>
     );
   };
 
-  const refreshHandler = () => {
-    fetchComments(commentsIds);
-  }
-
-  if (descendants === 0) {
+  if (commentsIds === undefined) {
     return (
       <div className="comments">
         <p className='comments-absence'>
@@ -67,20 +62,6 @@ const CommentsList:React.FC<CommentsListProps> = ({commentsIds, descendants}) =>
 
   return (
     <div className='comments'>
-      <div className="comments-toolkit">
-        <div className="comments-toolkit__counter">
-          <p className="comments-toolkit__counter-text">
-          Total
-        </p>
-        <div className='comments-toolkit__counter-value'>
-          {descendants}
-        </div>
-        <p className="comments-toolkit__counter-text">
-          comments
-        </p>
-        </div>
-        <RefreshButton refreshHandler={refreshHandler} />
-      </div>
       {loading ? 
         <>
           <Skeleton />

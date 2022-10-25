@@ -13,7 +13,7 @@
   position: relative;
 }
 
-.comments-list:not(:first-child)::after {
+.comments-list::after {
   content: '';
   border-left: 2px dashed var(--red-color);
   position: absolute;
@@ -25,33 +25,6 @@
 
 .comments-list::after {
   animation: dashed-border 1s forwards;
-}
-
-.comments-toolkit {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  margin-bottom: 20px;
-  animation: fade-in 1s forwards;
-}
-
-.comments-toolkit__counter {
-  display: flex;
-  align-items: center;
-  padding: 5px 10px;
-  border: 2px solid var(--pink-color);
-}
-
-.comments-toolkit__counter-value {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: 10px;
-}
-
-.comments-toolkit__counter-text:not(:first-child) {
-  margin-left: 10px;
 }
 
 @keyframes fade-in {

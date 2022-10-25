@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, memo } from 'react';
 import { covertTimeToDate } from '../../utils/converTime'
 
 import './commentsItem.css'
@@ -24,7 +24,7 @@ interface INestedComments {
   time: number;
 }
 
-const CommentsItem: React.FC<CommentsItemProps> = ({text, by, time, kids, commentWidth}) => {
+const CommentsItem: React.FC<CommentsItemProps> = memo(({text, by, time, kids, commentWidth}) => {
   const [nestedComments, setNestedComments] = useState<INestedComments[]>([])
   const [showNestedComments, setShowNestedComments] = useState<boolean>(false)
 
@@ -59,6 +59,8 @@ const CommentsItem: React.FC<CommentsItemProps> = ({text, by, time, kids, commen
           {items}
         </ul>
     );
+
+    // eslint-disable-next-line
   };
 
   const nestedContent = showNestedComments ? renderNestedComments(nestedComments) : null
@@ -92,6 +94,6 @@ const CommentsItem: React.FC<CommentsItemProps> = ({text, by, time, kids, commen
       { nestedContent }
     </>
   );
-};
+});
 
 export default CommentsItem;

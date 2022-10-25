@@ -1,0 +1,39 @@
+.comments-toolkit {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20px;
+  animation: fade-in 1s forwards;
+  color: var(--pink-color)
+}
+
+.comments-toolkit__counter {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  border: 2px solid var(--pink-color);
+}
+
+.comments-toolkit__counter-value {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.comments-toolkit__counter-text:not(:first-child) {
+  margin-left: 10px;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
