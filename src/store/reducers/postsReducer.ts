@@ -2,7 +2,7 @@ import { PostsAction, PostsActionTypes, PostsState } from "../../types/posts";
 
 const initialState: PostsState = {
   posts: [],
-  post: {},
+  post: null,
   loading: false,
   error: null
 };

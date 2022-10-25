@@ -1,5 +1,13 @@
+export interface IComment {
+  by: string;
+  id: number;
+  kids: number[];
+  text: string;
+  time: number;
+}
+
 export interface CommentsState {
-  comments: any[];
+  comments: IComment[];
   loading: boolean;
   error: null | string;
 }
@@ -16,7 +24,7 @@ export interface FetchCommentsAction {
 
 export interface FetchCommentsSuccessAction {
   type: CommentsActionTypes.FETCH_COMMENTS_SUCCESS;
-  payload: any[];
+  payload: IComment[];
 }
 
 export interface FetchCommentsErrorAction {

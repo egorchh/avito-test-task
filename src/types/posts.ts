@@ -1,6 +1,17 @@
+export interface IPost {
+  title: string;
+  score: number;
+  by: string;
+  id: number;
+  kids: number[];
+  time: number;
+  descendants: number;
+  url: string;
+}
+
 export interface PostsState {
-  posts: any[];
-  post: Record<string, any>;
+  posts: IPost[];
+  post: IPost | null;
   loading: boolean;
   error: null | string;
 }
@@ -20,7 +31,7 @@ export interface FetchPostsAction {
 
 export interface FetchPostsSuccessAction {
   type: PostsActionTypes.FETCH_POSTS_SUCCESS;
-  payload: any[];
+  payload: IPost[];
 }
 
 export interface FetchPostsErrorAction {
@@ -34,7 +45,7 @@ export interface FetchOnePostAction {
 
 export interface FetchOnePostSuccessAction {
   type: PostsActionTypes.FETCH_ONE_POST_SUCCESS;
-  payload: object;
+  payload: IPost;
 }
 
 export interface FetchOnePostErrorAction {

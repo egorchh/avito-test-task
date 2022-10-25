@@ -32,7 +32,7 @@ const PostPage: React.FC = () => {
 
   
   const refreshHandler = () => {
-    fetchComments(post.kids);
+    fetchComments(post ? post.kids : []);
   }
 
   if (error) {
@@ -43,7 +43,7 @@ const PostPage: React.FC = () => {
     <div className='post-page'>
       <Helmet>
         <meta name="description" content="News title" />
-        <title>{post.title}</title>
+        <title>{post ? post.title : ''}</title>
       </Helmet>
       <BackLink />
       {loading ? <Skeleton /> :
@@ -51,11 +51,11 @@ const PostPage: React.FC = () => {
           <a 
             rel="noreferrer" 
             target="_blank" 
-            href={post.url} 
+            href={post ? post.url : ''} 
             className="post-page__link"
           >
             <h1 className='post-page__title'>
-              {post.title}
+              {post ? post.title : ''}
             </h1>
             <img className="post-page__link-img" src={linkSVG} alt="Ссылка на источник новости" />
           </a>
@@ -63,16 +63,16 @@ const PostPage: React.FC = () => {
             className='post-page__descr-wrapper'
           >
             <p className='post-page__descr-author'>
-              {post.by}
+              {post ? post.by : ''}
             </p>
             <p className='post-page__descr-date'>
-              {covertTimeToDate(post.time)}
+              {covertTimeToDate(post ? post.time : 0)}
             </p>
           </div>
-          <CommentsTools refreshHandler={refreshHandler} descendants={post.descendants} />
+          <CommentsTools refreshHandler={refreshHandler} descendants={post ? post.descendants : 0} />
         </>
       }
-      <CommentsList commentsIds={post.kids} />
+      <CommentsList commentsIds={post ? post.kids : []} />
     </div>
   );
 };
