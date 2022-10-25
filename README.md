@@ -20,7 +20,7 @@
 
 ## Спасибо за потраченное на проверку время!
 
-![Иллюстрация к проекту](https://github.com/egorchh/avito-test-task/raw/master/src/assets/screens/1.png)
-![Иллюстрация к проекту](https://github.com/egorchh/avito-test-task/raw/master/src/assets/screens/2.png)
-![Иллюстрация к проекту](https://github.com/egorchh/avito-test-task/raw/master/src/assets/screens/3.png)
+![Иллюстрация к проекту](https://github.com/egorchh/avito-test-task/raw/master/src/assets/screens/1.png)\
+![Иллюстрация к проекту](https://github.com/egorchh/avito-test-task/raw/master/src/assets/screens/2.png)\
+![Иллюстрация к проекту](https://github.com/egorchh/avito-test-task/raw/master/src/assets/screens/3.png)\
 
