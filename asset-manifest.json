@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.css": "/avito-test-task/static/css/main.b780e01c.css",
+    "main.js": "/avito-test-task/static/js/main.326fc3c9.js",
+    "static/css/905.a0704597.chunk.css": "/avito-test-task/static/css/905.a0704597.chunk.css",
+    "static/js/905.8f3f593a.chunk.js": "/avito-test-task/static/js/905.8f3f593a.chunk.js",
+    "static/css/557.10c9fd1d.chunk.css": "/avito-test-task/static/css/557.10c9fd1d.chunk.css",
+    "static/js/557.26e67d61.chunk.js": "/avito-test-task/static/js/557.26e67d61.chunk.js",
+    "static/css/639.9fb40712.chunk.css": "/avito-test-task/static/css/639.9fb40712.chunk.css",
+    "static/js/639.098c0f82.chunk.js": "/avito-test-task/static/js/639.098c0f82.chunk.js",
+    "static/js/329.bf0df6c6.chunk.js": "/avito-test-task/static/js/329.bf0df6c6.chunk.js",
+    "static/media/Gilroy-Semibold.woff": "/avito-test-task/static/media/Gilroy-Semibold.5b042906a8b58ec4633e.woff",
+    "static/media/Gilroy-Light.woff": "/avito-test-task/static/media/Gilroy-Light.368f09f56e89b3fe11c7.woff",
+    "static/media/Gilroy-Regular.woff": "/avito-test-task/static/media/Gilroy-Regular.ebe86c0337572553acea.woff",
+    "static/media/Gilroy-Bold.woff": "/avito-test-task/static/media/Gilroy-Bold.f39ff81c45c126012265.woff",
+    "static/media/Gilroy-Semibold.woff2": "/avito-test-task/static/media/Gilroy-Semibold.7726b19d33f1b7f4135a.woff2",
+    "static/media/Gilroy-Light.woff2": "/avito-test-task/static/media/Gilroy-Light.c2e7a6dc47e5b9a89a37.woff2",
+    "static/media/Gilroy-Regular.woff2": "/avito-test-task/static/media/Gilroy-Regular.f6c9931fabe5a6eb3307.woff2",
+    "static/media/Gilroy-Bold.woff2": "/avito-test-task/static/media/Gilroy-Bold.5c5942d3e4d9a9645df4.woff2",
+    "index.html": "/avito-test-task/index.html",
+    "static/media/like.svg": "/avito-test-task/static/media/like.103af92c36113ea479cbb44729e0a088.svg",
+    "static/media/refresh.svg": "/avito-test-task/static/media/refresh.8af170e78212903462f8865a1087397c.svg",
+    "static/media/avatar.svg": "/avito-test-task/static/media/avatar.985329455520e06840a97f748c4de7ab.svg",
+    "static/media/link.svg": "/avito-test-task/static/media/link.712190a82944e6028bdbe431cde7228a.svg",
+    "static/media/back.svg": "/avito-test-task/static/media/back.352898e9c4744f2293948a36fe22dce9.svg",
+    "static/media/arrow-down.svg": "/avito-test-task/static/media/arrow-down.bf87b24a35cfcab250ba8964657839da.svg",
+    "main.b780e01c.css.map": "/avito-test-task/static/css/main.b780e01c.css.map",
+    "main.326fc3c9.js.map": "/avito-test-task/static/js/main.326fc3c9.js.map",
+    "905.a0704597.chunk.css.map": "/avito-test-task/static/css/905.a0704597.chunk.css.map",
+    "905.8f3f593a.chunk.js.map": "/avito-test-task/static/js/905.8f3f593a.chunk.js.map",
+    "557.10c9fd1d.chunk.css.map": "/avito-test-task/static/css/557.10c9fd1d.chunk.css.map",
+    "557.26e67d61.chunk.js.map": "/avito-test-task/static/js/557.26e67d61.chunk.js.map",
+    "639.9fb40712.chunk.css.map": "/avito-test-task/static/css/639.9fb40712.chunk.css.map",
+    "639.098c0f82.chunk.js.map": "/avito-test-task/static/js/639.098c0f82.chunk.js.map",
+    "329.bf0df6c6.chunk.js.map": "/avito-test-task/static/js/329.bf0df6c6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b780e01c.css",
+    "static/js/main.326fc3c9.js"
+  ]
+}
